@@ -44,14 +44,14 @@ Visit the [Docs](https://docs.medusajs.com/learn/installation#get-started) to le
 
 ## Deploying on Railway
 
-The Railway configuration builds the Medusa backend and admin before starting the server. Set the following variables for the service:
+Railway is configured to build the service with the root `Dockerfile`. The image installs dependencies, builds the Medusa backend and admin, and starts the production server. Set the following variables for the service:
 
 - `DATABASE_URL`: the connection URL for a Railway PostgreSQL database.
 - `STORE_CORS`, `ADMIN_CORS`, and `AUTH_CORS`: comma-separated allowed origins for your storefront and admin.
 - `JWT_SECRET` and `COOKIE_SECRET`: long, randomly generated secrets.
 - `REDIS_URL`: a Railway Redis connection URL. Redis is recommended for production instead of Medusa's in-memory fallback.
 
-Railway uses `npm run build` as the build command and `npm start` as the start command through `railway.json`.
+The `.dockerignore` file keeps local environment files, dependencies, and generated build output out of the Docker build context.
 
 ## What is Medusa
 

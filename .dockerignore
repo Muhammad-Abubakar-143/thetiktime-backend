@@ -1,0 +1,11 @@
+.env
+.env.*
+.git
+.medusa
+.DS_Store
+node_modules
+coverage
+dist
+build
+uploads
+npm-debug.log*
