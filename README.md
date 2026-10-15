@@ -42,6 +42,17 @@ Visit the [Quickstart Guide](https://docs.medusajs.com/learn/installation) to se
 
 Visit the [Docs](https://docs.medusajs.com/learn/installation#get-started) to learn more about our system requirements.
 
+## Deploying on Railway
+
+The Railway configuration builds the Medusa backend and admin before starting the server. Set the following variables for the service:
+
+- `DATABASE_URL`: the connection URL for a Railway PostgreSQL database.
+- `STORE_CORS`, `ADMIN_CORS`, and `AUTH_CORS`: comma-separated allowed origins for your storefront and admin.
+- `JWT_SECRET` and `COOKIE_SECRET`: long, randomly generated secrets.
+- `REDIS_URL`: a Railway Redis connection URL. Redis is recommended for production instead of Medusa's in-memory fallback.
+
+Railway uses `npm run build` as the build command and `npm start` as the start command through `railway.json`.
+
 ## What is Medusa
 
 Medusa is a set of commerce modules and tools that allow you to build rich, reliable, and performant commerce applications without reinventing core commerce logic. The modules can be customized and used to build advanced ecommerce stores, marketplaces, or any product that needs foundational commerce primitives. All modules are open-source and freely available on npm.
