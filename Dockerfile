@@ -3,7 +3,7 @@ FROM node:22.22.0-slim
 WORKDIR /app
 
 COPY package.json package-lock.json ./
-RUN npm install -g npm@11.10.0 && npm ci --include=dev
+RUN npm install -g npm@11.10.0 && npm install --include=dev
 
 COPY . .
 RUN npm run build
