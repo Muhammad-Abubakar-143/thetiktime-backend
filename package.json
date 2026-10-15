@@ -15,6 +15,7 @@
   "scripts": {
     "build": "medusa build",
     "start": "medusa start",
+    "migrate": "medusa db:migrate",
     "seed": "medusa exec ./src/scripts/seed-demo-products.ts",
     "dev": "medusa develop",
     "lint": "medusa lint",
