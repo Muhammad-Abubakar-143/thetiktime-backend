@@ -12,5 +12,24 @@ module.exports = defineConfig({
       jwtSecret: process.env.JWT_SECRET,
       cookieSecret: process.env.COOKIE_SECRET,
     }
-  }
+  },
+  modules: [
+    {
+      resolve: '@medusajs/medusa/file',
+      options: {
+        providers: [
+          {
+            resolve: './src/modules/cloudinary-file',
+            id: 'cloudinary',
+            options: {
+              cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+              api_key: process.env.CLOUDINARY_API_KEY,
+              api_secret: process.env.CLOUDINARY_API_SECRET,
+              folder: process.env.CLOUDINARY_FOLDER || 'products',
+            },
+          },
+        ],
+      },
+    },
+  ],
 })
