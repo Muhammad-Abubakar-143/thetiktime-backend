@@ -31,3 +31,7 @@ export default ProductWidget
 ```
 
 This inserts a widget with the text “Product Widget” at the end of a product’s details page.
+
+Product detail widgets can also add product-specific fields. For example, watch
+attributes can be shown in the main product details column and saved to the
+product's `metadata` using the Admin API.
